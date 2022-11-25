@@ -21,9 +21,9 @@ RUN unzip awscliv2.zip
 RUN ./aws/install
 
 # TerraDocs
-RUN go install github.com/terraform-docs/terraform-docs@v0.16.0
-RUN go get -u github.com/jstemmer/go-junit-report
-#RUN go install github.com/jstemmer/go-junit-report/v2@latest
+RUN go install github.com/terraform-docs/terraform-docs
+#RUN go get -u github.com/jstemmer/go-junit-report
+RUN go install github.com/jstemmer/go-junit-report/v2
 
 RUN mkdir -p ${terratest_home}/.aws \
     && chown -R ${UID}:${GID} $terratest_home \
