@@ -22,6 +22,7 @@ RUN ./aws/install
 
 # TerraDocs
 RUN go install github.com/terraform-docs/terraform-docs@v0.16.0
+RUN go install github.com/jstemmer/go-junit-report/v2@latest
 
 RUN mkdir -p ${terratest_home}/.aws \
     && chown -R ${UID}:${GID} $terratest_home \
